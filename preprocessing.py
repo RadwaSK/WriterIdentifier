@@ -49,7 +49,7 @@ def extract_lines(img, path, indx):
 		# if i == len(chosen_rects) - 1:
 		# 	continue
 		x, y, w, h = r
-		new_img = img_binary_orig[y:y+h, x:x+w]
+		new_img = img[y:y+h, x:x+w]
 		new_img_path = path + '/' + str(indx) + '.jpg'
 		indx += 1
 		cv.imwrite(new_img_path, new_img)
@@ -75,6 +75,7 @@ while (i_test != N):
 			test_img_path = test_case + '/' + a
 			img = cv.imread(test_img_path, cv.IMREAD_GRAYSCALE)
 			extract_lines(img, test_lines_path, 0)
+			continue
 
 		a = test_case + '/' + a
 		forms = os.listdir(a)
