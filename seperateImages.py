@@ -18,7 +18,7 @@ metadata_info =  sorted(metadata_info, key=lambda x: x[0])
 for i in range(len(images)):
 	image_name = images[i]
 	author = metadata_info[i][1]
-	if not os.path.exists('data/01/' + author):
-		os.makedirs('data/01/' + author)
-	shutil.copy2('data/01/' + image_name, 'data/01/' + author)
+	if not os.path.exists('all/' + author):
+		os.makedirs('all/' + author)
+	shutil.copy2('dataset/' + image_name, 'all/' + author)
 
